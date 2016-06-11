@@ -1,0 +1,20 @@
+<div class="row">
+    <aside class="col-md-4">
+        <%= render 'shared/user_profile' %>
+    </aside>
+
+    <div class="col-md-8">
+        <%= render 'follow_form' if logged_in? %>
+        <% if @user.following_relationships.any? %>
+            <h3>Followings(
+                <%= @user.following_relationships.count %>
+                )</h3>
+                
+            <div class="row following">
+                <% @following_users.each do |following_user| %>
+                    <%= render partial: 'users/following_users', locals: {following_user: following_user} %>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
+</div>

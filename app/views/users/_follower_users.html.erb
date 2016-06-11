@@ -1,0 +1,17 @@
+<div class="col-md-4 nopadding">
+    <div class="user">
+        <%= link_to gravatar_for(follower_user, size:50), follower_user %>
+        
+        <h2>
+            <%= link_to follower_user.name, follower_user %>
+        </h2>
+        <div class="profile">
+            <p>
+                <%= follower_user.region %>
+            </p>
+            <p>
+                <%= follower_user.profile %>
+            </p>
+        </div>
+    </div>
+</div>

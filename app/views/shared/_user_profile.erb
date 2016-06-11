@@ -1,0 +1,30 @@
+<section class="user_info">
+<h1>
+    <%= gravatar_for @user %>
+    <%= @user.name %>
+</h1> 
+<table class="table">
+<tbody>
+    <tr>
+        <th scope="row">E-mail</th>
+        <td><%= @user.email %></td>
+    </tr>
+    <tr>
+        <th scope="row">Region</th>
+        <td><%= @user.region %></td>
+    </tr>
+    <tr>
+        <th scope="row">Profile</th>
+        <td><%= @user.profile %></td>
+    </tr>
+    <tr>
+        <th scope="row">Followings</th>
+        <td><%= link_to(@user.following_relationships.count, user_path + '/followings') %></td>
+    </tr>
+    <tr>
+        <th scope="row">Followers</th>
+        <td><%= link_to(@user.follower_relationships.count, user_path + '/followers') %></td>
+    </tr>
+</tbody>
+</table>
+</section>
