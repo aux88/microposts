@@ -11,9 +11,7 @@
                 )</h3>
                 
             <div class="row following">
-                <% @following_users.each do |following_user| %>
-                    <%= render partial: 'users/following_users', locals: {following_user: following_user} %>
-                <% end %>
+                <%= render @following_users %>
             </div>
         <% end %>
     </div>
